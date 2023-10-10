@@ -208,7 +208,7 @@ proxy_dns
 socks5 127.0.0.1 " . $newport;
 file_put_contents("proxychains.conf",$proxychains_config);
 echo "Starting ghlicense...";
-shell_exec("ssh -D $newport -f -C -i /key/id_rsa.pub -q -N -oStrictHostKeyChecking=no root@$ip > /dev/null 2>&1");
+shell_exec("ssh -D $newport -f -C -i /id_rsa.pub -q -N -oStrictHostKeyChecking=no root@$ip > /dev/null 2>&1");
 echo "[OK]\n";
 echo "Running License Activation....\n";
 shell_exec("proxychains4 -q -f proxychains.conf /usr/local/cpanel/cpkeyclt --force");
